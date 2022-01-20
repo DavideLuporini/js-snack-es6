@@ -21,13 +21,23 @@ const bici = [{
 
     },
 ]
+const { peso } = bici;
+
+let pesi = []
+
 
 console.log
 for (i = 0; i < bici.length; i++) {
-    const { peso } = bici[i];
     // eseguo un controllo sul peso , per adesso metto 1 , come posso fare per confrontare ogni giro se il numero è maggiore o minore di quello precedente?
-    if (peso < 1) {
-        console.log(peso)
-    }
+    const { peso } = bici[i];
+    pesi.push(peso)
 
 }
+console.log(pesi)
+
+function minNum(array) {
+    return Math.min(array);
+}
+
+let pesoMinimo = minNum(...pesi);
+console.log(pesoMinimo)
