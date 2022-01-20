@@ -36,8 +36,7 @@ for (i = 0; i < bici.length; i++) {
 console.log(pesi)
 
 function minNum(array) {
-    return Math.min(array);
+    return Math.min(...array);
 }
-
-let pesoMinimo = minNum(...pesi);
+let pesoMinimo = minNum(pesi);
 console.log(pesoMinimo)
