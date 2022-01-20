@@ -50,10 +50,24 @@ const sudTeams = [{
     },
 ]
 
+
 // 2) spargo gli elementi dell'array in un terzo array
 const serieA = [...nordTeams, ...sudTeams];
+console.table(serieA)
 
 // 3) creo un array per le statistiche
 const statistics = [];
+console.table(statistics);
 
-// 4) eseguo un ciclo per le statistiche
+// 4) creo una funzione random
+const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
+
+// 5) eseguo un ciclo per le statistiche
+for (let i = 0; i < serieA.length; i++) {
+    let { name, fouls } = serieA[i];
+    fouls = getRandomNumber(1, 100);
+
+    statistics.push(name, fouls);
+}
+
+console.table(statistics);
