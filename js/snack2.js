@@ -49,3 +49,11 @@ const sudTeams = [{
 
     },
 ]
+
+// 2) spargo gli elementi dell'array in un terzo array
+const serieA = [...nordTeams, ...sudTeams];
+
+// 3) creo un array per le statistiche
+const statistics = [];
+
+// 4) eseguo un ciclo per le statistiche
