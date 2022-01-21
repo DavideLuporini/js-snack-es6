@@ -6,11 +6,21 @@
 // funzione per prendere i numeri in posizione in un certo intervallo
 const numbersBetween = (array, x, y) => {
     const numBetween = array.filter((item, i) => {
-        item = array[i];
-        if (i >= x && i <= y) {
-            return true;
+
+        if (x > y) {
+
+            if (i >= x && i <= y) {
+                return true;
+            }
+            return false;
         }
-        return false;
+        if (y > x) {
+
+            if (i >= y && i <= x) {
+                return true;
+            }
+            return false;
+        }
     });
     return numBetween;
 }
@@ -20,8 +30,8 @@ const numbersBetween = (array, x, y) => {
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 // Elementi da utilizzare
 const array = ['io', 'tu', 'loro', 'acqua', 45, 67, 4];
-const min = getRandomNumber(0, 2);
-const max = getRandomNumber(4, 6);
+const min = getRandomNumber(0, 7);
+const max = getRandomNumber(0, 7);
 
 console.log(`i valori sono compresi fra la posizione ${min} e la posizione ${max}`)
 
