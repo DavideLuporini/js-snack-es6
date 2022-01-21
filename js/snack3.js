@@ -3,14 +3,20 @@
 // La funzione ritornerà un nuovo array con i valori che hanno la posizione compresa tra i due numeri.
 // Usiamo i nuovi metodi degli array visti oggi in classe.
 
-// funzione random
+// funzione per prendere i numeri in posizione in un certo intervallo
 const numbersBetween = (array, x, y) => {
-    const numBetween = [];
-    for (let i = x; i <= y; i++) {
-        numBetween.push(array[i]);
-    }
+    const numBetween = array.filter((item, i) => {
+        item = array[i];
+        if (i >= x && i <= y) {
+            return true;
+        }
+        return false;
+    });
     return numBetween;
 }
+
+
+// funzione random
 const getRandomNumber = (min, max) => Math.floor(Math.random() * (max - min + 1)) + min;
 // Elementi da utilizzare
 const array = ['io', 'tu', 'loro', 'acqua', 45, 67, 4];
