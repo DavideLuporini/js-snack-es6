@@ -8,22 +8,22 @@
 
 const students = [{
         id: 23,
-        nome: 'hashbulla',
+        nome: 'hashbulla kumbulla',
         totVoti: 300,
     },
     {
         id: 15,
-        nome: 'antonio',
+        nome: 'antonio los caanfgelse',
         totVoti: 111,
     },
     {
         id: 21,
-        nome: 'walter',
+        nome: 'walter de Walteris',
         totVoti: 222,
     },
     {
         id: 6,
-        nome: 'domenico',
+        nome: 'domenico de vitignis',
         totVoti: 45,
     },
 ]
@@ -32,13 +32,14 @@ const students = [{
 
 // declaring function
 function capitalizeStudents(nome) {
+
     const firstLetter = nome.charAt(0).toUpperCase();
     const otherLetters = nome.substring(1).toLowerCase();
     return firstLetter + otherLetters;
-
 }
 
-// esecution 1
+
+// esecution 
 const studentsCapitalize = students.map(students => capitalizeStudents(students.nome))
 console.log(studentsCapitalize)
 const over70 = (array) => {
@@ -62,3 +63,19 @@ const over70Under120 = (array) => {
 }
 
 console.log(over70Under120(students));
+
+
+// BONUS
+
+const nameStudents = students.map(({ nome }) => {
+    const word = nome.split(" ");
+    let moreWords = "";
+    for (let i = 0; i < word.length; i++) {
+        let words =
+            word[i].charAt(0).toUpperCase() + word[i].slice(1).toLowerCase();
+        moreWords += " " + words;
+    }
+    return moreWords;
+});
+
+console.table(nameStudents)
