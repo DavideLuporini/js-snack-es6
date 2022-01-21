@@ -67,7 +67,10 @@ for (let i = 0; i < serieA.length; i++) {
     let { name, fouls } = serieA[i];
     fouls = getRandomNumber(1, 100);
 
-    statistics.push(name, fouls);
+    statistics.push({ name, fouls });
 }
 
 console.table(statistics);
+
+
+// non avevo capito che fosse un'array di oggetti , aveo fatto un array , corretto adesso
